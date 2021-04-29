@@ -4,6 +4,7 @@ from django.dispatch import receiver
 from django.urls import reverse
 from django_rest_passwordreset.signals import reset_password_token_created
 from django.core.mail import send_mail
+from decouple import config
 
 # Create your models here.
 
@@ -51,7 +52,7 @@ def password_reset_token_created(sender, instance, reset_password_token, *args, 
         "Password Reset for {title}".format(title="udaycakeshop.herokuapp.com"),
         # message:
         email_plaintext_message,
-        # from:
-        'udayjp11@gmail.com',
+        # from:        
+        config('FROM_EMAIL'),
         # to:
         [reset_password_token.user.email])
