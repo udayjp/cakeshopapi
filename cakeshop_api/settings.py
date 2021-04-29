@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['68.183.80.25']
+ALLOWED_HOSTS = ['68.183.80.25','127.0.0.1']
 
 
 # Application definition
@@ -153,7 +153,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
+    # 'http://localhost:3000',
+    'http://68.183.80.25:8009',
 )
 
 
