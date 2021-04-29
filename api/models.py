@@ -48,7 +48,7 @@ def password_reset_token_created(sender, instance, reset_password_token, *args, 
     email_plaintext_message = " copy this token------->token={}".format(reset_password_token.key)
     send_mail(
         # title:
-        "Password Reset for {title}".format(title="Some website title"),
+        "Password Reset for {title}".format(title="udaycakeshop.herokuapp.com"),
         # message:
         email_plaintext_message,
         # from:
