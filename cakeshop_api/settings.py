@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -92,15 +92,15 @@ DATABASES = {
         
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': 'cakeshop',
+        'NAME': config('DB_NAME'),
 
-        'USER': 'postgres',
+        'USER': config('DB_USER'),
 
-        'PASSWORD': 'uday',
+        'PASSWORD': config('DB_PASSWORD'),
 
-        'HOST': 'localhost',
+        'HOST': config('DB_HOST'),
 
-        'PORT': '5432',
+        'PORT': config('DB_PORT'),
     },
 }
 
