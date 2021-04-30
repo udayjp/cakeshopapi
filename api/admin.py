@@ -5,3 +5,4 @@ from .views import *
 
 admin.site.register(Cake)
 admin.site.register(Cart)
+admin.site.register(Orders)
